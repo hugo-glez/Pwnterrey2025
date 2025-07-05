@@ -1,0 +1,78 @@
+fecha: mayo de 2025
+title: URSA/Mispadu
+
+diagrama:
+ - paso:
+   icon: 
+   - phishing:
+       - rsc/correo.png 
+   - pdffile:
+       - rsc/factura.png
+   text: Phishing con adjunto PDF
+   description: El usuario recibe un correo con el pretexto de una supuesta factura, la contraseña es el correo electronico del destinatario
+   iocs:
+   - baeb522091e083a61b0cac112eeef9b13b0c64f82700207024f3509dbfa02386   pdf
+   - https://tinyurl.com/39wj3mxt
+
+   
+
+   
+ - paso:
+   icon: 
+   - enlace
+   - descarga:
+       - rsc/descarga.png
+   - zipfile:
+       - rsc/zipfile.png  
+   text: PDF para descargar ZIP
+   description: Al seguir el enlace desde el PDF se descarga un archivo comprimido con emojis en el nombre
+   iocs:
+   - https://sprl.in/rNlQd9r?1
+   - https://sprl.in/Xqw6VxS
+   - https://fbnaveg.com/
+   - https://is.gd/5HWfSr
+   - https://archivogjd.online/
+   - https://webattach.mail.yandex.net/message_part_real/?sid=YWVzX3NpZDp7ImFlc0tleUlkIjoiMTc4IiwiaG1hY0tleUlkIjoiMTc4IiwiaXZCYXNlNjQiOiJVR1JJWUdaS3RSdkZPUHRQdVFPcDFnPT0iLCJzaWRCYXNlNjQiOiJlZ0FjWXl2cmNudVNrNlJQbWZ3Mm5ESktzYmRPMHppdnNRS1N2OGZJZXFtdHZPNlN6RzhZMTNFbEFUKy9LOGhWQnJVaVNieHVPSXVJVnJYZUhDQ3VmbWRHYWVNMnRpYUU5cmZPc2J2a0tkcFVhblVMVHZVc2dFU3RadkVCdk5YZSIsImhtYWNCYXNlNjQiOiIvNHFkTmZWcUI0cnozbC9sb0pOMURGSGhQMzFVc201RWhGek5YWklPTERVPSJ9&name=download-2025-avast%F0%9D%9F%B5%F0%9D%9F%AE%F0%9D%9F%AC%F0%9D%9F%B2%F0%9D%9F%B0.zip
+   - ba392628fbd710c865e768fbe99e57d7857ef93eaba3ef87a4bab77f76dc1ab5   zip
+   - 723c7e346a78ca7a7a0e0e6718349e4e1654b50e22c734f895bccbfe51917aa1   hta 
+
+   
+ - paso:
+   icon: 
+   - htafile:
+       - rsc/hta.png
+   - jsfile:
+       - rsc/jsfile.png
+   - vbsfile-bug:
+       - rsc/vbs1.png
+   - powershell:
+       - rsc/powershell.png
+   - vbsfile-bug:
+       - rsc/vbs2.png
+   text: HTA incluye un JS y este a un VBS que genera un powershell y descarga un VBS
+   description: El archivo HTA incluye un recurso en JavaScript y ese manda llamar un archivo VBS, este está ofuscado crea otro archivo VBS usando wscript.shell y lo ejecuta
+   iocs:
+   - https://111.190.202.64.host.secureserver.net/PjA29/PjA29gerw/ZGfQ891.js
+   - https://111.190.202.64.host.secureserver.net/YTcc71/uURG961.vbs
+   - https://111.190.202.64.host.secureserver.net/g1
+   - 1b17ab11fbf8809f7924dccdcbf0d1e0ba88e84337fe3f4fc64e6d3c0e581386   js
+   - 8431796ac370a7435598c82ff49478466f0608f4830c53f005a1c915392811cd   vbs
+   - 81b9d74486b6b4b2b49945d6fff739469ad0d3d361881688442acaa30ed7dfb4   g11
+
+
+ - paso:
+   icon: 
+   - payload
+   - autoitfile
+   - c2:
+      - rsc/panel.png
+   text: Payload y C2
+   description: El nuevo archivo VBS descarga el payload y se comunica con el C2
+   iocs:
+   - https://111.190.202.64.host.secureserver.net/w/c1/    
+   
+   
+   
+
+
+
